@@ -8,9 +8,24 @@ export async function updateSession(request: NextRequest) {
     },
   })
 
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error(`
+      ERROR: Supabase environment variables are not set.
+      Please create a .env.local file in the root of your project and add the following:
+      NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+      NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+    `);
+    // Pass through the request without attempting to use Supabase
+    return { response, user: null, error: 'Supabase environment variables not set.' };
+  }
+
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         get(name: string) {
@@ -58,5 +73,5 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  return {response, user}
+  return {response, user, error: null}
 }
