@@ -22,9 +22,9 @@ export const featuredSermon = {
 export const upcomingEvents = [
   {
     date: new Date(2025, 10, 15),
-    title: "Send-Off for Brian Choge",
-    description: "Join us at the Choge's family home in Elgon View to celebrate their son, Brian, who received a visa to study for his Master's in Data Science in Sydney, Australia.",
-    imageId: "testimony-2",
+    title: "Send-Off for Ryan Choge",
+    description: "Join us at the Choge's family home in Elgon View to celebrate their son, Ryan, who received a visa to study for his Master's in Data Science in Sydney, Australia.",
+    imageId: "ryan-choge",
     organizer: "Choge Family"
   },
   {

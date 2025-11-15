@@ -1,4 +1,3 @@
-
 {
   "placeholderImages": [
     {
@@ -28,32 +27,32 @@
     {
       "id": "sermon-thumbnail",
       "description": "A pastor passionately preaching from a pulpit.",
-      "imageUrl": "https://picsum.photos/seed/sermon1/600/400",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1557896279-080cb03b9ca6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwYXN0b3IlMjBwcmVhY2hpbmd8ZW58MHx8fHwxNzYzMjAwODE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pastor preaching"
     },
     {
       "id": "event-1",
       "description": "A community of people gathered for a church event.",
-      "imageUrl": "https://picsum.photos/seed/event1/500/300",
+      "imageUrl": "https://images.unsplash.com/photo-1761666519915-857c3656b856?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21tdW5pdHklMjBnYXRoZXJpbmd8ZW58MHx8fHwxNzYzMTkzNjc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "community gathering"
     },
     {
       "id": "event-2",
       "description": "A youth concert with hands raised in worship.",
-      "imageUrl": "https://picsum.photos/seed/event2/500/300",
+      "imageUrl": "https://images.unsplash.com/photo-1630467253785-90f6c2f16e11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b3V0aCUyMGNvbmNlcnR8ZW58MHx8fHwxNzYzMjQyOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "youth concert"
     },
     {
       "id": "event-3",
       "description": "A small group studying the bible together.",
-      "imageUrl": "https://picsum.photos/seed/event3/500/300",
+      "imageUrl": "https://images.unsplash.com/photo-1510590337019-5ef8d3d32116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiaWJsZSUyMHN0dWR5fGVufDB8fHx8MTc2MzIwNjQyMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "bible study"
     },
     {
-        "id": "event-cell-group",
-        "description": "A small group of diverse people meeting in a home.",
-        "imageUrl": "https://picsum.photos/seed/cellgroup/500/300",
-        "imageHint": "small group"
+      "id": "event-cell-group",
+      "description": "A small group of diverse people meeting in a home.",
+      "imageUrl": "https://images.unsplash.com/photo-1629141650344-db693cfd6d48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzbWFsbCUyMGdyb3VwfGVufDB8fHx8MTc2MzI0MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "small group"
     },
     {
       "id": "ministry-men",
@@ -62,46 +61,46 @@
       "imageHint": "men fellowship"
     },
     {
-        "id": "ministry-youth",
-        "description": "A group of diverse young people smiling and laughing.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/youths.JPG",
-        "imageHint": "young people"
+      "id": "ministry-youth",
+      "description": "A group of diverse young people smiling and laughing.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/youths.JPG",
+      "imageHint": "young people"
     },
     {
-        "id": "ministry-choir",
-        "description": "A church choir singing with passion.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/worship.JPG",
-        "imageHint": "choir singing"
+      "id": "ministry-choir",
+      "description": "A church choir singing with passion.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/worship.JPG",
+      "imageHint": "choir singing"
     },
     {
-        "id": "ministry-women",
-        "description": "A group of women in a supportive fellowship meeting.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/women.JPG",
-        "imageHint": "women group"
+      "id": "ministry-women",
+      "description": "A group of women in a supportive fellowship meeting.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/women.JPG",
+      "imageHint": "women group"
     },
     {
-        "id": "ministry-women-hero",
-        "description": "A diverse group of women worshiping.",
-        "imageUrl": "https://picsum.photos/seed/minwhero/1920/1080",
-        "imageHint": "women worship"
+      "id": "ministry-women-hero",
+      "description": "A diverse group of women worshiping.",
+      "imageUrl": "https://images.unsplash.com/photo-1582163471165-2346e1d70350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21lbiUyMHdvcnNoaXB8ZW58MHx8fHwxNzYzMjQyOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "women worship"
     },
     {
-        "id": "ministry-women-highlight",
-        "description": "Women holding hands in prayer.",
-        "imageUrl": "https://picsum.photos/seed/minwhighlight/1200/400",
-        "imageHint": "women praying"
+      "id": "ministry-women-highlight",
+      "description": "Women holding hands in prayer.",
+      "imageUrl": "https://images.unsplash.com/photo-1583090318293-ebd145b2c63f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21lbiUyMHByYXlpbmd8ZW58MHx8fHwxNzYzMjQyOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "women praying"
     },
     {
-        "id": "ministry-children",
-        "description": "Happy children playing and learning in a classroom.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/kids.JPG",
-        "imageHint": "children playing"
+      "id": "ministry-children",
+      "description": "Happy children playing and learning in a classroom.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/kids.JPG",
+      "imageHint": "children playing"
     },
     {
-        "id": "ministry-outreach",
-        "description": "Volunteers participating in a community service project.",
-        "imageUrl": "https://picsum.photos/seed/minoutreach/400/400",
-        "imageHint": "community service"
+      "id": "ministry-outreach",
+      "description": "Volunteers participating in a community service project.",
+      "imageUrl": "https://images.unsplash.com/photo-1527525443983-6e60c75fff46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb21tdW5pdHklMjBzZXJ2aWNlfGVufDB8fHx8MTc2MzI0MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community service"
     },
     {
       "id": "testimony-1",
@@ -116,6 +115,12 @@
       "imageHint": "male leader"
     },
     {
+      "id": "ryan-choge",
+      "description": "Profile picture of Ryan Choge.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/ryan%20choge.png",
+      "imageHint": "male graduate"
+    },
+    {
       "id": "testimony-3",
       "description": "Profile picture of Tabitha Jepchumba.",
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/tabby.png",
@@ -124,74 +129,74 @@
     {
       "id": "testimony-4",
       "description": "Profile picture of a man.",
-      "imageUrl": "https://picsum.photos/seed/testimony5/200/200",
+      "imageUrl": "https://images.unsplash.com/photo-1656582117510-3a177bf866c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBoYXBweXxlbnwwfHx8fDE3NjMyMzg4NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person happy"
     },
     {
-        "id": "about-hero",
-        "description": "Soft focus image of the inside of a church with light streaming in.",
-        "imageUrl": "https://picsum.photos/seed/abouthero/1920/1080",
-        "imageHint": "church interior"
+      "id": "about-hero",
+      "description": "Soft focus image of the inside of a church with light streaming in.",
+      "imageUrl": "https://images.unsplash.com/photo-1569759276108-31b8e7e43e7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaHVyY2glMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjMxNjIxNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "church interior"
     },
     {
-        "id": "services-hero",
-        "description": "A church congregation with hands raised in worship.",
-        "imageUrl": "https://picsum.photos/seed/serviceshero/1920/1080",
-        "imageHint": "worship service"
+      "id": "services-hero",
+      "description": "A church congregation with hands raised in worship.",
+      "imageUrl": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b3JzaGlwJTIwc2VydmljZXxlbnwwfHx8fDE3NjMyNDI5MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "worship service"
     },
     {
-        "id": "ministries-hero",
-        "description": "A diverse group of people in fellowship.",
-        "imageUrl": "https://picsum.photos/seed/ministrieshero/1920/1080",
-        "imageHint": "church fellowship"
+      "id": "ministries-hero",
+      "description": "A diverse group of people in fellowship.",
+      "imageUrl": "https://images.unsplash.com/photo-1551199452-0bdf5f1d2254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaHVyY2glMjBmZWxsb3dzaGlwfGVufDB8fHx8MTc2MzI0MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "church fellowship"
     },
     {
-        "id": "ministry-highlight",
-        "description": "Hands of different people joined together, showing unity.",
-        "imageUrl": "https://picsum.photos/seed/minhighlight/1200/400",
-        "imageHint": "hands together"
+      "id": "ministry-highlight",
+      "description": "Hands of different people joined together, showing unity.",
+      "imageUrl": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoYW5kcyUyMHRvZ2V0aGVyfGVufDB8fHx8MTc2MzE3Njk1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hands together"
     },
     {
-        "id": "leader-1",
-        "description": "Profile picture of Rev. Dr. Elias Ng'etich.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Elias-Ngetich.webp",
-        "imageHint": "male leader"
+      "id": "leader-1",
+      "description": "Profile picture of Rev. Dr. Elias Ng'etich.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Elias-Ngetich.webp",
+      "imageHint": "male leader"
     },
     {
-        "id": "leader-2",
-        "description": "Profile picture of Pastor Moureen.",
-        "imageUrl": "https://picsum.photos/seed/leader2/200/200",
-        "imageHint": "female leader"
+      "id": "leader-2",
+      "description": "Profile picture of Pastor Moureen.",
+      "imageUrl": "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBsZWFkZXJ8ZW58MHx8fHwxNzYzMjQyOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "female leader"
     },
     {
-        "id": "leader-3",
-        "description": "Profile picture of Pastor Jophet Lagat.",
-        "imageUrl": "https://picsum.photos/seed/leader3/200/200",
-        "imageHint": "male pastor"
+      "id": "leader-3",
+      "description": "Profile picture of Pastor Jophet Lagat.",
+      "imageUrl": "https://images.unsplash.com/photo-1602025747966-d2eb8bdeeea8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWxlJTIwcGFzdG9yfGVufDB8fHx8MTc2MzI0MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "male pastor"
     },
     {
-        "id": "leader-4",
-        "description": "Profile picture of Evangelist Bureti Philemon.",
-        "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/bureti.png",
-        "imageHint": "male evangelist"
+      "id": "leader-4",
+      "description": "Profile picture of Evangelist Bureti Philemon.",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/bureti.png",
+      "imageHint": "male evangelist"
     },
     {
-        "id": "event-hero",
-        "description": "A large, joyful crowd at a church conference.",
-        "imageUrl": "https://picsum.photos/seed/eventhero/1920/1080",
-        "imageHint": "church conference"
+      "id": "event-hero",
+      "description": "A large, joyful crowd at a church conference.",
+      "imageUrl": "https://images.unsplash.com/photo-1725555946744-37906174e061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2h1cmNoJTIwY29uZmVyZW5jZXxlbnwwfHx8fDE3NjMyNDI5MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "church conference"
     },
     {
-        "id": "contact-hero",
-        "description": "The exterior of a modern church building on a sunny day.",
-        "imageUrl": "https://picsum.photos/seed/contacthero/1920/1080",
-        "imageHint": "church building"
+      "id": "contact-hero",
+      "description": "The exterior of a modern church building on a sunny day.",
+      "imageUrl": "https://images.unsplash.com/photo-1574864926371-52711469b3a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2h1cmNoJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzYzMjE0MjU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "church building"
     },
     {
-        "id": "support-hero",
-        "description": "Inspiring photo of the church building / congregation.",
-        "imageUrl": "https://picsum.photos/seed/supporthero/1920/1080",
-        "imageHint": "church building"
+      "id": "support-hero",
+      "description": "Inspiring photo of the church building / congregation.",
+      "imageUrl": "https://images.unsplash.com/photo-1591204154525-f7ae12d8572f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaHVyY2glMjBidWlsZGluZ3xlbnwwfHx8fDE3NjMyMTQyNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "church building"
     },
     {
       "id": "women-gallery-1",
@@ -247,21 +252,96 @@
       "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/worship.JPG",
       "imageHint": "choir singing"
     },
-    { "id": "video-thumb-1", "description": "Music video thumbnail for YERUSALEMU", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir6.avif", "imageHint": "music video" },
-    { "id": "video-thumb-2", "description": "Music video thumbnail for MIMI NI MZABIBU", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir1.avif", "imageHint": "music video" },
-    { "id": "video-thumb-3", "description": "Music video thumbnail for FURAHINI", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir2.avif", "imageHint": "music video" },
-    { "id": "video-thumb-4", "description": "Music video thumbnail for HEKIMA", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir3.avif", "imageHint": "music video" },
-    { "id": "video-thumb-5", "description": "Music video thumbnail for NDOA", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir4.avif", "imageHint": "music video" },
-    { "id": "video-thumb-6", "description": "Music video thumbnail for TUJITOLEE", "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir5.avif", "imageHint": "music video" },
-    { "id": "children-hero", "description": "A vibrant, colorful drawing of kids playing under a rainbow.", "imageUrl": "https://picsum.photos/seed/kidshero/1920/1080", "imageHint": "kids drawing" },
-    { "id": "children-teacher-1", "description": "A friendly looking woman smiling.", "imageUrl": "https://picsum.photos/seed/teacher1/200/200", "imageHint": "woman smiling" },
-    { "id": "children-teacher-2", "description": "A friendly looking man smiling.", "imageUrl": "https://picsum.photos/seed/teacher2/200/200", "imageHint": "man smiling" },
-    { "id": "children-gallery-1", "description": "A child focused on doing arts and crafts.", "imageUrl": "https://picsum.photos/seed/kidsgallery1/400/400", "imageHint": "child crafts" },
-    { "id": "children-gallery-2", "description": "Children sitting in a circle listening to a story.", "imageUrl": "https://picsum.photos/seed/kidsgallery2/400/400", "imageHint": "kids storytime" },
-    { "id": "children-gallery-3", "description": "A group of kids singing and clapping.", "imageUrl": "https://picsum.photos/seed/kidsgallery3/400/400", "imageHint": "kids singing" },
-    { "id": "children-gallery-4", "description": "A child proudly showing off their drawing.", "imageUrl": "https://picsum.photos/seed/kidsgallery4/400/400", "imageHint": "child drawing" },
-    { "id": "children-gallery-5", "description": "Kids playing with building blocks on a colorful mat.", "imageUrl": "https://picsum.photos/seed/kidsgallery5/400/400", "imageHint": "kids blocks" },
-    { "id": "children-gallery-6", "description": "A group of children playing outdoors on a sunny day.", "imageUrl": "https://picsum.photos/seed/kidsgallery6/400/400", "imageHint": "kids outdoors" },
+    {
+      "id": "video-thumb-1",
+      "description": "Music video thumbnail for YERUSALEMU",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir6.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "video-thumb-2",
+      "description": "Music video thumbnail for MIMI NI MZABIBU",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir1.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "video-thumb-3",
+      "description": "Music video thumbnail for FURAHINI",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir2.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "video-thumb-4",
+      "description": "Music video thumbnail for HEKIMA",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir3.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "video-thumb-5",
+      "description": "Music video thumbnail for NDOA",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir4.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "video-thumb-6",
+      "description": "Music video thumbnail for TUJITOLEE",
+      "imageUrl": "https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/choir5.avif",
+      "imageHint": "music video"
+    },
+    {
+      "id": "children-hero",
+      "description": "A vibrant, colorful drawing of kids playing under a rainbow.",
+      "imageUrl": "https://images.unsplash.com/photo-1620398722262-969d8f2bc875?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxraWRzJTIwZHJhd2luZ3xlbnwwfHx8fDE3NjMxNjYxODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids drawing"
+    },
+    {
+      "id": "children-teacher-1",
+      "description": "A friendly looking woman smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzYzMTc1NDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "children-teacher-2",
+      "description": "A friendly looking man smiling.",
+      "imageUrl": "https://images.unsplash.com/photo-1633367583895-08545d733dfe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc2MzE1OTMzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man smiling"
+    },
+    {
+      "id": "children-gallery-1",
+      "description": "A child focused on doing arts and crafts.",
+      "imageUrl": "https://images.unsplash.com/photo-1605627079912-97c3810a11a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMGNyYWZ0c3xlbnwwfHx8fDE3NjMyNDI5MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child crafts"
+    },
+    {
+      "id": "children-gallery-2",
+      "description": "Children sitting in a circle listening to a story.",
+      "imageUrl": "https://images.unsplash.com/photo-1758687126404-3437da7244d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8a2lkcyUyMHN0b3J5dGltZXxlbnwwfHx8fDE3NjMxODA3Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids storytime"
+    },
+    {
+      "id": "children-gallery-3",
+      "description": "A group of kids singing and clapping.",
+      "imageUrl": "https://images.unsplash.com/photo-1556021635-397a5674febf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxraWRzJTIwc2luZ2luZ3xlbnwwfHx8fDE3NjMyNDI5MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids singing"
+    },
+    {
+      "id": "children-gallery-4",
+      "description": "A child proudly showing off their drawing.",
+      "imageUrl": "https://images.unsplash.com/photo-1650504148053-ae51b12dc1d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGlsZCUyMGRyYXdpbmd8ZW58MHx8fHwxNzYzMjEyMjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child drawing"
+    },
+    {
+      "id": "children-gallery-5",
+      "description": "Kids playing with building blocks on a colorful mat.",
+      "imageUrl": "https://images.unsplash.com/photo-1631032024590-140cc8dd4b32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxraWRzJTIwYmxvY2tzfGVufDB8fHx8MTc2MzI0MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids blocks"
+    },
+    {
+      "id": "children-gallery-6",
+      "description": "A group of children playing outdoors on a sunny day.",
+      "imageUrl": "https://images.unsplash.com/photo-1555850021-9283dd370433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxraWRzJTIwb3V0ZG9vcnN8ZW58MHx8fHwxNzYzMjQyOTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kids outdoors"
+    },
     {
       "id": "widows-hero",
       "description": "A group of widows from the ministry.",
