@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
         allowedForwardedHosts: ['localhost'],
         allowedOrigins: ['localhost:9002', 'studio.web.app']
     },
+    allowedDevOrigins: ["6000-firebase-studio-1757523289057.cluster-ikslh4rdsnbqsvu5nw3v4dqjj2.cloudworkstations.dev"],
   },
   typescript: {
     ignoreBuildErrors: true,
