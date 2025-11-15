@@ -48,16 +48,6 @@ const nextConfig: NextConfig = {
       }
     ],
   },
-  webpack: (config, { isServer }) => {
-    // Suppress the 'require.extensions' warning from handlebars
-    config.module.rules.push({
-      test: /\.js$/,
-      include: /node_modules\/handlebars/,
-      use: ['ignore-loader'],
-    });
-
-    return config;
-  },
 };
 
 export default nextConfig;
