@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { featuredSermon } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { SermonAIChatTrigger } from './sermon-ai-chat';
 import { PlayCircle } from 'lucide-react';
 
 export default function FeaturedSermon() {
@@ -39,7 +38,6 @@ export default function FeaturedSermon() {
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold">
                   Watch Sermon
                 </Button>
-                <SermonAIChatTrigger sermonTranscript={featuredSermon.transcript} />
               </div>
             </div>
           </div>

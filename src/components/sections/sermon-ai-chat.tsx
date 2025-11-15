@@ -30,14 +30,11 @@ type Message = {
   content: string;
 };
 
-export function SermonAIChatTrigger({ sermonTranscript }: { sermonTranscript: string }) {
+export function SermonAIChatTrigger({ sermonTranscript, children }: { sermonTranscript: string; children: React.ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size="lg" variant="outline" className="border-primary/50 text-primary hover:bg-primary/5 hover:border-primary rounded-full">
-          <Bot className="mr-2 h-5 w-5" />
-          Ask AI About Sermon
-        </Button>
+        {children}
       </DialogTrigger>
       <DialogContent className="sm:max-w-[525px] grid-rows-[auto_1fr_auto] p-0 max-h-[90dvh]">
         <DialogHeader className="p-6 pb-2">
