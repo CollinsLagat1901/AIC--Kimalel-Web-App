@@ -21,7 +21,7 @@ export async function handleContactForm(prevState: any, formData: FormData) {
   if (!validatedFields.success) {
     const firstError = Object.values(validatedFields.error.flatten().fieldErrors)[0]?.[0];
     return {
-      message: firstError || 'Invalid input.',
+      message: firstError || 'There was an issue with your submission. Please check your details and try again.',
       success: false,
     };
   }
@@ -39,7 +39,7 @@ export async function handleContactForm(prevState: any, formData: FormData) {
   if (error) {
     console.error('Supabase error:', error.message);
     return { 
-        message: 'Sorry, there was an error sending your message. Please try again.',
+        message: 'Sorry, there was a server error sending your message. Please try again later.',
         success: false 
     };
   }

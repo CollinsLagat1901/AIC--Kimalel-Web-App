@@ -7,11 +7,41 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { upcomingEvents } from "@/lib/constants";
+import { createClient } from "@/utils/supabase/client";
+import { useEffect, useState } from "react";
+
+type Event = {
+  id: string;
+  title: string;
+  description: string | null;
+  date: string;
+  image_id: string | null;
+};
 
 export default function UpcomingEvents() {
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    const supabase = createClient();
+    async function fetchUpcomingEvents() {
+      const { data, error } = await supabase
+        .from('events')
+        .select('*')
+        .eq('published', true)
+        .gt('date', new Date().toISOString())
+        .order('date', { ascending: true })
+        .limit(6);
+      
+      if (error) {
+        console.error("Error fetching upcoming events:", error);
+      } else {
+        setEvents(data as Event[]);
+      }
+    }
+    fetchUpcomingEvents();
+  }, []);
   
-  if (!upcomingEvents || upcomingEvents.length === 0) {
+  if (!events || events.length === 0) {
       return (
         <section id="events" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 text-center">
@@ -21,9 +51,6 @@ export default function UpcomingEvents() {
         </section>
     );
   }
-
-  // Sort events by date, from past to future
-  const sortedEvents = upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
 
   return (
     <section id="events" className="py-16 md:py-24 bg-background">
@@ -42,9 +69,9 @@ export default function UpcomingEvents() {
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
-            {sortedEvents.map((event, index) => {
+            {events.map((event, index) => {
               const eventDate = new Date(event.date);
-              const eventImage = PlaceHolderImages.find(p => p.id === event.imageId);
+              const eventImage = PlaceHolderImages.find(p => p.id === event.image_id);
               if (!eventImage) return null;
 
               return (
@@ -68,7 +95,7 @@ export default function UpcomingEvents() {
                         <h3 className="font-bold font-headline text-xl text-primary mb-2 h-14">{event.title}</h3>
                         <p className="text-muted-foreground text-sm mb-4 h-20 overflow-hidden">{event.description}</p>
                         <Button variant="link" asChild className="p-0 text-accent hover:text-accent/80">
-                            <Link href="#">Learn More &rarr;</Link>
+                            <Link href="/events">Learn More &rarr;</Link>
                         </Button>
                       </CardContent>
                     </Card>

@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, Settings } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, Settings, GitPullRequest } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 
@@ -15,7 +15,7 @@ const navItems = [
   { href: '/admin/donations', label: 'Donations', icon: HandHeart },
   { href: '/admin/stories', label: 'Stories', icon: Newspaper },
   { href: '/admin/subscriptions', label: 'Subscriptions', icon: Mail },
-  { href: '/admin/requests', label: 'Prayer Requests', icon: Mail },
+  { href: '/admin/requests', label: 'Prayer Requests', icon: GitPullRequest },
 ];
 
 export default function AdminSidebar() {
@@ -24,7 +24,7 @@ export default function AdminSidebar() {
   return (
     <aside className="hidden md:flex flex-col w-64 bg-primary text-primary-foreground">
       <div className="h-16 flex items-center justify-center border-b border-white/20">
-        <Logo />
+        <Logo className="text-primary-foreground" />
       </div>
       <nav className="flex-1 px-4 py-6 space-y-2">
         {navItems.map((item) => (

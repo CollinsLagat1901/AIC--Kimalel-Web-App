@@ -1,4 +1,6 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -7,22 +9,43 @@ import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { format } from "date-fns";
+import { useEffect, useState } from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-export default async function SermonsAdminPage() {
-  const supabase = createClient();
-  const { data: sermons, error } = await supabase
-    .from('sermons')
-    .select('*')
-    .order('date', { ascending: false });
+type Sermon = {
+  id: string;
+  title: string;
+  preacher: string;
+  date: string;
+  type: string | null;
+  published: boolean;
+};
 
-  if (error) {
-    console.error("Error fetching sermons:", error);
-    // Handle error appropriately
-  }
+export default function SermonsAdminPage() {
+  const [sermons, setSermons] = useState<Sermon[]>([]);
+
+  useEffect(() => {
+    const supabase = createClient();
+    async function fetchSermons() {
+      const { data, error } = await supabase
+        .from('sermons')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (error) {
+        console.error("Error fetching sermons:", error);
+      } else {
+        setSermons(data as Sermon[]);
+      }
+    }
+    fetchSermons();
+  }, []);
+
 
   return (
+    <TooltipProvider>
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
@@ -46,7 +69,7 @@ export default async function SermonsAdminPage() {
                 </div>
                 <div className="relative w-full max-w-sm">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <Input placeholder="Search sermons..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                    <Input disabled placeholder="Search sermons..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
                 </div>
             </div>
         </CardHeader>
@@ -86,8 +109,8 @@ export default async function SermonsAdminPage() {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Delete</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Edit</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Delete</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>
@@ -98,5 +121,6 @@ export default async function SermonsAdminPage() {
         </CardContent>
       </Card>
     </div>
+    </TooltipProvider>
   );
 }

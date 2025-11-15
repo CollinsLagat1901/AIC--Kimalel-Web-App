@@ -23,16 +23,19 @@ export async function handleDonationForm(prevState: any, formData: FormData) {
   if (!validatedFields.success) {
     const firstError = Object.values(validatedFields.error.flatten().fieldErrors)[0]?.[0];
     return {
-      message: firstError || 'Invalid input.',
+      message: firstError || 'Invalid input. Please check your details and try again.',
       success: false,
     };
   }
   
-  // Here you would integrate with your Firebase Firestore and a payment gateway
+  // This is a placeholder. In a real application, you would integrate with
+  // a payment gateway and record the transaction in your database.
+  console.log('--- Placeholder Donation ---');
   console.log(`New Donation from ${validatedFields.data.fullName}:`);
   console.log(`Email: ${validatedFields.data.email}`);
   console.log(`Amount: ${validatedFields.data.amount}`);
   console.log(`Message: ${validatedFields.data.message}`);
+  console.log('--- End Placeholder ---');
 
-  return { message: `Thank you for your generous donation, ${validatedFields.data.fullName}! A confirmation has been sent to your email.`, success: true };
+  return { message: `Thank you for your generous pledge, ${validatedFields.data.fullName}! This form is a demo; no payment has been processed.`, success: true };
 }

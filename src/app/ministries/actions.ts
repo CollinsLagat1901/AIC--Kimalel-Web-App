@@ -28,7 +28,7 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
 
   if (!validatedFields.success) {
     const fieldErrors = validatedFields.error.flatten().fieldErrors;
-    const errorMessage = fieldErrors.fullName?.[0] || fieldErrors.email?.[0] || fieldErrors.phone?.[0] || 'Invalid input.';
+    const errorMessage = fieldErrors.fullName?.[0] || fieldErrors.email?.[0] || fieldErrors.phone?.[0] || 'Invalid input. Please check all fields.';
     return {
       message: errorMessage,
       success: false,
@@ -49,7 +49,7 @@ export async function handleMinistrySignup(prevState: any, formData: FormData) {
   if (error) {
     console.error('Supabase error:', error.message);
     return { 
-        message: 'Sorry, there was an error processing your signup. Please try again.',
+        message: 'Sorry, there was a server error processing your signup. Please try again later.',
         success: false 
     };
   }

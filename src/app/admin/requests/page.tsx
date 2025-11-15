@@ -1,4 +1,6 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -6,19 +8,38 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { format } from "date-fns";
+import { useEffect, useState } from "react";
 
-export default async function PrayerRequestsAdminPage() {
-  const supabase = createClient();
-  const { data: requests, error } = await supabase
-    .from('contacts')
-    .select('*')
-    .order('created_at', { ascending: false });
+type ContactRequest = {
+  id: string;
+  full_name: string;
+  subject: string | null;
+  message: string | null;
+  created_at: string;
+  status: string | null;
+};
 
-  if (error) {
-    console.error("Error fetching requests:", error);
-  }
+export default function PrayerRequestsAdminPage() {
+  const [requests, setRequests] = useState<ContactRequest[]>([]);
+
+  useEffect(() => {
+    const supabase = createClient();
+    async function fetchRequests() {
+      const { data, error } = await supabase
+        .from('contacts')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error("Error fetching requests:", error);
+      } else {
+        setRequests(data as ContactRequest[]);
+      }
+    }
+    fetchRequests();
+  }, []);
 
   return (
     <div>
@@ -38,7 +59,7 @@ export default async function PrayerRequestsAdminPage() {
                 </div>
                 <div className="relative w-full max-w-sm">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <Input placeholder="Search by name or subject..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                    <Input disabled placeholder="Search by name or subject..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
                 </div>
             </div>
         </CardHeader>
@@ -82,10 +103,10 @@ export default async function PrayerRequestsAdminPage() {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem>View Details</DropdownMenuItem>
-                        <DropdownMenuItem>Mark as In Progress</DropdownMenuItem>
-                        <DropdownMenuItem>Mark as Resolved</DropdownMenuItem>
-                        <DropdownMenuItem>Delete</DropdownMenuItem>
+                        <DropdownMenuItem disabled>View Details</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Mark as In Progress</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Mark as Resolved</DropdownMenuItem>
+                        <DropdownMenuItem disabled>Delete</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>
