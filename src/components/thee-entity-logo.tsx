@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function TheeEntityLogo({ className }: { className?: string }) {
   return (
-    <Link href="https://start-up-website-kappa.vercel.app/" target="_blank" rel="noopener noreferrer" className={cn("flex items-center gap-2 text-sm font-bold transition-colors", className)}>
+    <Link href="https://www.theeentity.co.ke/" target="_blank" rel="noopener noreferrer" className={cn("flex items-center gap-2 text-sm font-bold transition-colors", className)}>
       <div className="p-1 bg-accent/20 rounded-md text-primary-foreground">
         <svg
           xmlns="http://www.w3.org/2000/svg"
