@@ -76,14 +76,6 @@ export default function Footer() {
           </div>
 
           <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
-            <div className="mb-4">
-               <Button asChild variant="outline">
-                    <Link href="/login">
-                        <KeyRound className="mr-2 h-4 w-4" />
-                        Admin Login (Temporary)
-                    </Link>
-               </Button>
-            </div>
             <p>&copy; {new Date().getFullYear()} AIC Kimalel Saramek Church. All Rights Reserved.
             </p>
             <div className="flex justify-center items-center gap-2 mt-2">
