@@ -1,19 +1,21 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { featuredSermon } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { SermonAIChatTrigger } from './sermon-ai-chat';
+import { PlayCircle } from 'lucide-react';
 
 export default function FeaturedSermon() {
-  const sermonImage = PlaceHolderImages.find(p => p.id === 'sermon-thumbnail');
+  const sermonImage = PlaceHolderImages.find(p => p.id === 'hero-slide-3');
 
   return (
     <section id="sermons" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <Card className="overflow-hidden shadow-lg border-none bg-card">
           <div className="grid md:grid-cols-2">
-            <div className="relative aspect-video md:aspect-auto">
+            <div className="relative aspect-video md:aspect-auto group cursor-pointer">
               {sermonImage && (
                 <Image
                   src={sermonImage.imageUrl}
@@ -23,7 +25,9 @@ export default function FeaturedSermon() {
                   data-ai-hint={sermonImage.imageHint}
                 />
               )}
-               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex items-center justify-center transition-all duration-300 group-hover:bg-black/50">
+                <PlayCircle className="w-20 h-20 text-white/80 drop-shadow-lg transition-all duration-300 group-hover:text-white group-hover:scale-110" />
+               </div>
             </div>
             <div className="flex flex-col justify-center p-8 md:p-12">
               <h3 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-2">{featuredSermon.title}</h3>
