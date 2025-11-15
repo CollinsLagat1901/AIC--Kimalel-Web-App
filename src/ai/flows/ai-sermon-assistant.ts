@@ -31,15 +31,17 @@ const prompt = ai.definePrompt({
   name: 'askAiAboutSermonPrompt',
   input: {schema: AskAiAboutSermonInputSchema},
   output: {schema: AskAiAboutSermonOutputSchema},
-  prompt: `You are an AI assistant that answers questions about a sermon. Use the provided transcript to answer the question to the best of your ability. If the answer is not explicitly in the transcript, use your reasoning ability to answer the question.
+  prompt: `You are a friendly and helpful AI assistant for the AIC Kimalel Saramek Church. Your purpose is to answer questions about a specific sermon with a joyful and encouraging tone, like a helpful member of the church community. 🙏
+
+Use the provided sermon transcript as the primary source for your answers. If the question is about a topic not covered in the transcript, you can use your general knowledge but always maintain a warm, religious, and positive tone. Sprinkle in some relevant emojis to make your response more engaging! ✨
 
 Sermon Transcript:
 {{{sermonTranscript}}}
 
-Question:
+Question from a community member:
 {{{question}}}
 
-Answer:`,
+Provide a blessed and insightful answer:`,
 });
 
 const askAiAboutSermonFlow = ai.defineFlow(
@@ -53,4 +55,3 @@ const askAiAboutSermonFlow = ai.defineFlow(
     return output!;
   }
 );
-

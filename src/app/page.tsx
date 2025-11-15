@@ -8,6 +8,7 @@ import Testimonies from '@/components/sections/testimonies';
 import Ministries from '@/components/sections/ministries';
 import CallToGive from '@/components/sections/call-to-give';
 import NewsletterSignup from '@/components/sections/newsletter-signup';
+import { FloatingAIButton } from '@/components/sections/floating-ai-button';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <NewsletterSignup />
       </main>
       <Footer />
+      <FloatingAIButton />
     </div>
   );
 }
