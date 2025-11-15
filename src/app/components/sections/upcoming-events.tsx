@@ -1,6 +1,5 @@
 
 
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -73,7 +72,7 @@ export default async function UpcomingEvents() {
                         <h3 className="font-bold font-headline text-xl text-primary mb-2 h-14">{event.title}</h3>
                         <p className="text-muted-foreground text-sm mb-4 h-20 overflow-hidden">{event.description}</p>
                         <Button variant="link" asChild className="p-0 text-accent hover:text-accent/80">
-                            <Link href="#">Learn More &rarr;</Link>
+                            <Link href="/events">Learn More &rarr;</Link>
                         </Button>
                       </CardContent>
                     </Card>
