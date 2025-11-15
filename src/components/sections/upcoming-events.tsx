@@ -1,4 +1,6 @@
 
+'use client';
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,7 +9,7 @@ import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { upcomingEvents } from "@/lib/constants";
 
-export default async function UpcomingEvents() {
+export default function UpcomingEvents() {
   
   if (!upcomingEvents || upcomingEvents.length === 0) {
       return (
