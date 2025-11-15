@@ -21,32 +21,39 @@ export const featuredSermon = {
 
 export const upcomingEvents = [
   {
-    date: new Date(2024, 10, 12),
-    title: "Youth Worship Night",
-    description: "A special night of worship, prayer, and fellowship for our youth. All are welcome!",
-    imageId: "event-1",
-    organizer: "Youth Fellowship"
+    date: new Date(2025, 10, 15),
+    title: "Send-Off for Brian Choge",
+    description: "Join us at the Choge's family home in Elgon View to celebrate their son, Brian, who received a visa to study for his Master's in Data Science in Sydney, Australia.",
+    imageId: "testimony-2",
+    organizer: "Choge Family"
   },
   {
-    date: new Date(2024, 10, 18),
-    title: "Community Food Drive",
-    description: "Join us as we partner with local organizations to collect food for families in need.",
-    imageId: "event-2",
-    organizer: "Outreach Team"
+      date: new Date(2025, 11, 20),
+      title: "Pastor's Visit Fundraiser",
+      description: "A special fundraiser to support our visiting pastor's mission and ministry. Your contribution makes a difference.",
+      imageId: "support-hero",
+      organizer: "Church Leadership"
   },
   {
-    date: new Date(2024, 11, 3),
-    title: "Annual Christmas Cantata",
-    description: "Celebrate the season with beautiful music from our choir and orchestra.",
-    imageId: "event-3",
-    organizer: "Choir & Worship Team"
+      date: new Date(2026, 0, 10),
+      title: "Annual Youth Camp",
+      description: "An exciting week of fun, fellowship, and spiritual growth for our youth. Sign up now!",
+      imageId: "ministry-youth",
+      organizer: "Youth Fellowship"
   },
   {
-    date: new Date(2025, 0, 7),
-    title: "New Year Prayer Breakfast",
-    description: "Start the new year right with a time of prayer, reflection, and community breakfast.",
-    imageId: "event-1",
-    organizer: "Church Leadership"
+      date: new Date(2026, 2, 5),
+      title: "Women's Conference 2026",
+      description: "Empowering women to live out their faith boldly. Guest speakers, worship, and breakout sessions.",
+      imageId: "ministry-women",
+      organizer: "Women's Fellowship"
+  },
+  {
+      date: new Date(2026, 4, 1),
+      title: "Community Service Day",
+      description: "Let's show God's love to our community through acts of service. All are welcome to join.",
+      imageId: "ministry-outreach",
+      organizer: "Outreach Team"
   },
 ];
 

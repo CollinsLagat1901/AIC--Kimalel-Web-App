@@ -1,26 +1,13 @@
 
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { createClient } from "@/utils/supabase/server";
-import { isFuture } from "date-fns";
+import { upcomingEvents } from "@/lib/constants";
 
 export default async function UpcomingEvents() {
-  const supabase = createClient();
-  const { data: events, error } = await supabase
-    .from('events')
-    .select('*')
-    .order('date', { ascending: true });
-
-  if (error) {
-    console.error('Error fetching events:', error);
-  }
-
-  const upcomingEvents = events?.filter(event => isFuture(new Date(event.date))) ?? [];
   
   if (!upcomingEvents || upcomingEvents.length === 0) {
       return (
@@ -32,6 +19,9 @@ export default async function UpcomingEvents() {
         </section>
     );
   }
+
+  // Sort events by date, from past to future
+  const sortedEvents = upcomingEvents.sort((a, b) => a.date.getTime() - b.date.getTime());
 
   return (
     <section id="events" className="py-16 md:py-24 bg-background">
@@ -50,13 +40,13 @@ export default async function UpcomingEvents() {
           className="w-full max-w-6xl mx-auto"
         >
           <CarouselContent>
-            {upcomingEvents.map((event) => {
+            {sortedEvents.map((event, index) => {
               const eventDate = new Date(event.date);
-              const eventImage = PlaceHolderImages.find(p => p.id === event.image_id);
+              const eventImage = PlaceHolderImages.find(p => p.id === event.imageId);
               if (!eventImage) return null;
 
               return (
-                <CarouselItem key={event.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-2">
                     <Card className="overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-card">
                       <div className="relative aspect-[4/3]">
