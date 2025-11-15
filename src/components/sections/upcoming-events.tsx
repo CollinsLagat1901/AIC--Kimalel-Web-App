@@ -1,45 +1,21 @@
 
-'use client';
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
+import { upcomingEvents as events } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { createClient } from "@/utils/supabase/client";
-import { useEffect, useState } from "react";
 
 type Event = {
-  id: string;
+  id: number;
   title: string;
-  description: string | null;
-  date: string;
-  image_id: string | null;
+  description: string;
+  date: string; 
+  image_url: string;
 };
 
-export default function UpcomingEvents() {
-  const [events, setEvents] = useState<Event[]>([]);
-
-  useEffect(() => {
-    const supabase = createClient();
-    async function fetchUpcomingEvents() {
-      const { data, error } = await supabase
-        .from('events')
-        .select('*')
-        .eq('published', true)
-        .gt('date', new Date().toISOString())
-        .order('date', { ascending: true })
-        .limit(6);
-      
-      if (error) {
-        console.error("Error fetching upcoming events:", error);
-      } else {
-        setEvents(data as Event[]);
-      }
-    }
-    fetchUpcomingEvents();
-  }, []);
+export default async function UpcomingEvents() {
   
   if (!events || events.length === 0) {
       return (
@@ -71,7 +47,7 @@ export default function UpcomingEvents() {
           <CarouselContent>
             {events.map((event, index) => {
               const eventDate = new Date(event.date);
-              const eventImage = PlaceHolderImages.find(p => p.id === event.image_id);
+              const eventImage = PlaceHolderImages.find(p => p.id === event.imageId);
               if (!eventImage) return null;
 
               return (
