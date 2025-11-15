@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/logo';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -47,9 +48,9 @@ export default function Header() {
   );
 
   const defaultLinkColor =
-    isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
+    isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
   const logoColor =
-    isHomePage && !isScrolled ? 'text-black' : 'text-primary-foreground';
+    isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
   const mobileMenuButtonColor = isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
 
   return (
@@ -75,6 +76,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button
               variant="outline"
               className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold"
@@ -85,7 +87,8 @@ export default function Header() {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-white/10")}>
