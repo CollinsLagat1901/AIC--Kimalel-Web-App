@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
@@ -19,7 +20,7 @@ export default function CallToGive() {
         <div className="max-w-md mx-auto bg-white/5 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-white/20">
           <div className="flex justify-center items-center gap-4 mb-6">
             <Image
-              src="/mpesa-logo.png"
+              src="https://mltlmcqkqqiubrjeasif.supabase.co/storage/v1/object/public/folders/photos/Mpesa.png"
               alt="M-Pesa Logo"
               width={100}
               height={40}
