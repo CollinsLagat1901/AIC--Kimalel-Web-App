@@ -1,9 +1,7 @@
-
 import Link from 'next/link';
-import { Facebook, Youtube, Phone, Mail, MapPin, KeyRound } from 'lucide-react';
+import { Facebook, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { TheeEntityLogo } from '../thee-entity-logo';
-import { Button } from '../ui/button';
 
 const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },

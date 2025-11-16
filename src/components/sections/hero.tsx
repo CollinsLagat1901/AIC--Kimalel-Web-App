@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -83,10 +82,6 @@ export default function Hero() {
           >
             <Link href="#services">Join Us This Sunday</Link>
           </Button>
-        </div>
-        <div className="flex justify-center items-center gap-2 mt-8 animate-fade-in-up animation-delay-300">
-            <span className="text-sm text-gray-400">Powered by</span>
-            <TheeEntityLogo className="text-white"/>
         </div>
       </div>
 

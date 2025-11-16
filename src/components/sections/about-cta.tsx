@@ -1,6 +1,4 @@
-
 import { Button } from "@/components/ui/button";
-import { TheeEntityLogo } from "../thee-entity-logo";
 import Link from "next/link";
 
 export default function AboutCta() {
@@ -21,10 +19,6 @@ export default function AboutCta() {
         >
           <Link href="/contact">Join Our Community</Link>
         </Button>
-        <div className="flex justify-center items-center gap-2 mt-8">
-            <span className="text-sm text-muted-foreground">Powered by</span>
-            <TheeEntityLogo />
-        </div>
       </div>
     </section>
   );
