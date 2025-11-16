@@ -56,7 +56,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-accent" />
-                  <a href="mailto:info@aickimalel.org" className="hover:text-accent transition-colors text-gray-300">info@aickimalel.org</a>
+                  <a href="mailto:Kiptooelias@gmail.com" className="hover:text-accent transition-colors text-gray-300">Kiptooelias@gmail.com</a>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-accent" />

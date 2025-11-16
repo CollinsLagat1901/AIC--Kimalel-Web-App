@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 const contactDetails = [
     { icon: MapPin, title: "Church Address", lines: ["AIC Kimalel Saramek", "Racecourse, Eldoret, Uasin Gishu County"] },
     { icon: Phone, title: "Phone Numbers", lines: ["Office: +254 705 226196"] },
-    { icon: Mail, title: "Email Address", lines: ["info@aickimalel.org"] },
+    { icon: Mail, title: "Email Address", lines: ["Kiptooelias@gmail.com"] },
     { icon: Clock, title: "Office Hours", lines: ["Monday - Friday", "8:00 AM - 5:00 PM"] },
 ]
 
