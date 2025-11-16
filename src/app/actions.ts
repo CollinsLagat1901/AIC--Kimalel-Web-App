@@ -53,5 +53,5 @@ export async function handleNewsletterSignup(prevState: any, formData: FormData)
     return { message: 'Sorry, there was an error. Please try again.' };
   }
 
-  return { message: `Thank you for subscribing!` };
+  return { message: `Thank you for subscribing! Welcome to our community.` };
 }
