@@ -17,11 +17,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Calendar as CalendarIcon, UploadCloud } from "lucide-react";
+import { Calendar as CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
-import { Switch } from "@/components/ui/switch";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { addSermon } from "@/app/admin/sermons/actions";
@@ -51,6 +49,7 @@ export function SermonEditDialog({ children }: { children: React.ReactNode }) {
       });
       if (state.success) {
         setOpen(false);
+        setDate(undefined);
       }
     }
   }, [state, toast]);
@@ -113,53 +112,7 @@ export function SermonEditDialog({ children }: { children: React.ReactNode }) {
               <Label htmlFor="description" className="text-right pt-2">
                 Description
               </Label>
-              <Textarea id="description" name="description" placeholder="Sermon summary or description..." className="col-span-3" rows={4} />
-            </div>
-            <div className="grid grid-cols-4 items-start gap-4">
-              <Label className="text-right pt-2">
-                  Media
-              </Label>
-              <div className="col-span-3 border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:bg-muted/50">
-                  <UploadCloud className="mx-auto h-12 w-12 text-muted-foreground" />
-                  <p className="mt-2 text-sm text-muted-foreground">
-                      <span className="font-semibold text-primary">Click to upload</span> or drag and drop
-                  </p>
-                  <p className="text-xs text-muted-foreground">Video, Audio, or Text files</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="tags" className="text-right">
-                Tags
-              </Label>
-              <Input id="tags" name="tags" placeholder="e.g. Faith, Forgiveness, Hope" className="col-span-3" />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label className="text-right">
-                Type
-              </Label>
-              <RadioGroup name="type" defaultValue="Video" className="flex items-center space-x-4 col-span-3">
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Video" id="r-video" />
-                  <Label htmlFor="r-video">Video</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Audio" id="r-audio" />
-                  <Label htmlFor="r-audio">Audio</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="Text" id="r-text" />
-                  <Label htmlFor="r-text">Text</Label>
-                </div>
-              </RadioGroup>
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label className="text-right">
-                Status
-              </Label>
-              <div className="flex items-center space-x-2 col-span-3">
-                  <Switch name="published" id="status-switch" />
-                  <Label htmlFor="status-switch">Published</Label>
-              </div>
+              <Textarea id="description" name="description" placeholder="Sermon summary or key scripture..." className="col-span-3" rows={4} />
             </div>
           </div>
           <DialogFooter>
