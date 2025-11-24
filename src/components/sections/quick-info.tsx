@@ -47,7 +47,7 @@ export default function QuickInfo() {
           {infoItems.map((item) => (
             <Card key={item.title} className="group text-center bg-card dark:bg-card border-2 border-transparent hover:border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="items-center">
-                <div className="p-4 bg-muted text-muted-foreground rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
+                <div className="p-4 bg-secondary text-primary rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                   <item.icon className="h-8 w-8" />
                 </div>
                 <CardTitle className="font-headline text-2xl pt-4 text-primary">{item.title}</CardTitle>

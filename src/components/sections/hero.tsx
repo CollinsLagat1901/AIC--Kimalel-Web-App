@@ -42,7 +42,7 @@ export default function Hero() {
   const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
   return (
-    <section className="relative h-screen flex items-center justify-center text-white text-center overflow-hidden bg-primary">
+    <section className="relative h-screen flex items-center justify-center text-white text-center overflow-hidden bg-background">
       <div className="absolute inset-0" ref={emblaRef}>
         <div className="flex h-full">
           {heroSlides.map((slide, index) => (
@@ -65,7 +65,7 @@ export default function Hero() {
           ))}
         </div>
       </div>
-      <div className="absolute inset-0 bg-primary/80"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
       
       <div className="relative z-10 px-4 flex flex-col items-center">
         <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-white animate-fade-in-down">

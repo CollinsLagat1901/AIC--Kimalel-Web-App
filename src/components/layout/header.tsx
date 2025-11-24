@@ -43,14 +43,14 @@ export default function Header() {
     'sticky top-0 z-50 w-full transition-all duration-300',
     isHomePage && !isScrolled
       ? 'bg-transparent'
-      : 'bg-primary/80 backdrop-blur-sm shadow-md'
+      : 'bg-background/80 backdrop-blur-sm shadow-md'
   );
 
   const defaultLinkColor =
-    isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
+    isHomePage && !isScrolled ? 'text-white' : 'text-foreground';
   const logoColor =
-    isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
-  const mobileMenuButtonColor = isHomePage && !isScrolled ? 'text-primary' : 'text-primary-foreground';
+    isHomePage && !isScrolled ? 'text-white' : 'text-primary';
+  const mobileMenuButtonColor = isHomePage && !isScrolled ? 'text-white' : 'text-primary';
 
   return (
     <header className={headerClasses} id="home">
@@ -76,8 +76,7 @@ export default function Header() {
 
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              variant="outline"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-blue"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold"
               asChild
             >
               <Link href="/contact">Plan Your Visit</Link>
@@ -88,15 +87,15 @@ export default function Header() {
           <div className="md:hidden flex items-center gap-2">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-white/10")}>
+                <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-black/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="bg-primary text-primary-foreground p-0 w-3/4">
+              <SheetContent side="left" className="bg-background text-foreground p-0 w-3/4">
                 <div className="flex h-full flex-col">
-                    <div className="flex items-center justify-between p-4 border-b border-white/20">
-                        <Logo className="text-primary-foreground" />
+                    <div className="flex items-center justify-between p-4 border-b border-border">
+                        <Logo className="text-primary" />
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
                                 <X className="h-6 w-6" />
@@ -111,7 +110,7 @@ export default function Header() {
                         href={link.href}
                         className={cn(
                           'text-lg font-medium transition-colors hover:text-accent',
-                          pathname === link.href ? 'text-accent font-bold' : 'text-primary-foreground'
+                          pathname === link.href ? 'text-accent font-bold' : 'text-foreground'
                         )}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -119,7 +118,6 @@ export default function Header() {
                       </Link>
                     ))}
                     <Button
-                        variant="outline"
                         className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 w-full mt-auto rounded-full"
                         onClick={() => setIsMobileMenuOpen(false)}
                         asChild

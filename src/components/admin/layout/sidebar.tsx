@@ -22,7 +22,7 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-primary text-primary-foreground">
+    <aside className="hidden md:flex flex-col w-64 bg-foreground text-primary-foreground">
       <div className="h-16 flex items-center justify-center border-b border-white/20">
         <Logo className="text-primary-foreground" />
       </div>
