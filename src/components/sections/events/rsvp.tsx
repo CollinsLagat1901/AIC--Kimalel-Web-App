@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect } from 'react';
@@ -8,7 +9,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { upcomingEvents } from '@/lib/constants';
+
+type EventTitle = {
+    title: string;
+}
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -19,7 +23,7 @@ function SubmitButton() {
   );
 }
 
-export default function EventRsvp() {
+export default function EventRsvp({ upcomingEvents }: { upcomingEvents: EventTitle[] }) {
   const [state, formAction] = useActionState(handleEventRsvp, { message: '', success: false });
   const { toast } = useToast();
 

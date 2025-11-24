@@ -1,36 +1,23 @@
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { featuredSermon, upcomingEvents } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { PlayCircle } from "lucide-react";
 import Link from "next/link";
+import { createClient } from "@/utils/supabase/server";
 
-const sermonArchive = [
-    {
-        ...featuredSermon,
-        date: new Date(2023, 9, 29),
-    },
-    {
-        title: "Living a Life of Purpose",
-        speaker: "Pastor Moureen Kosgei",
-        date: new Date(2023, 9, 22),
-        summary: "Discover God's unique purpose for your life and how to walk in it daily.",
-        imageId: "sermon-thumbnail"
-    },
-    {
-        title: "The Heart of a Servant",
-        speaker: "Pastor Jophet Lagat",
-        date: new Date(2023, 9, 15),
-        summary: "Learn about the importance of a servant's heart in the kingdom of God.",
-        imageId: "event-3"
-    }
-]
-
-
-export default function LatestSermons() {
+export default async function LatestSermons() {
+    const supabase = createClient();
+    const { data: sermons } = await supabase
+      .from('sermons')
+      .select('*')
+      .eq('published', true)
+      .order('date', { ascending: false })
+      .limit(6);
+  
   return (
     <section className="py-20 bg-secondary">
         <div className="section-divider mb-20"></div>
@@ -43,18 +30,18 @@ export default function LatestSermons() {
         </div>
 
         <div className="mb-12 flex flex-col md:flex-row gap-4 justify-center">
-            <Input placeholder="Search sermons..." className="max-w-sm bg-card border-gray-700 text-foreground focus:ring-accent" />
-            <Select>
+            <Input disabled placeholder="Search sermons..." className="max-w-sm bg-card border-gray-700 text-foreground focus:ring-accent" />
+            <Select disabled>
                 <SelectTrigger className="w-full md:w-[180px] bg-card border-gray-700 text-foreground focus:ring-accent">
                     <SelectValue placeholder="Filter by Pastor" />
                 </SelectTrigger>
                 <SelectContent className="bg-card text-foreground border-gray-700">
-                    <SelectItem value="ngetich">Rev. Elius Ngetich</SelectItem>
-                    <SelectItem value="moureen">Pst. Moureen Kosgei</SelectItem>
+                    <SelectItem value="ngetich">Rev. Elius N'getich</SelectItem>
+                    <SelectItem value="moureen">Pst. Maureen Kosgei</SelectItem>
                     <SelectItem value="jophet">Pst. Jophet Lagat</SelectItem>
                 </SelectContent>
             </Select>
-            <Select>
+            <Select disabled>
                 <SelectTrigger className="w-full md:w-[180px] bg-card border-gray-700 text-foreground focus:ring-accent">
                     <SelectValue placeholder="Filter by Theme" />
                 </SelectTrigger>
@@ -67,10 +54,10 @@ export default function LatestSermons() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sermonArchive.map((sermon, index) => {
-            const sermonImage = PlaceHolderImages.find(p => p.id === sermon.imageId);
+          {sermons && sermons.map((sermon) => {
+            const sermonImage = PlaceHolderImages.find(p => p.id === 'sermon-thumbnail');
             return (
-              <Card key={index} className="overflow-hidden group bg-card border-accent/20 border backdrop-blur-sm text-foreground transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20">
+              <Card key={sermon.id} className="overflow-hidden group bg-card border-accent/20 border backdrop-blur-sm text-foreground transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:shadow-accent/20">
                 <div className="relative aspect-[16/9]">
                   {sermonImage && (
                     <Image
@@ -87,8 +74,8 @@ export default function LatestSermons() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="font-bold font-headline text-xl text-accent mb-2 h-14">{sermon.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{sermon.speaker} &bull; {sermon.date.toLocaleDateString()}</p>
-                  <p className="text-foreground text-sm mb-4 h-20 overflow-hidden">{sermon.summary}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{sermon.preacher} &bull; {new Date(sermon.date).toLocaleDateString()}</p>
+                  <p className="text-foreground text-sm mb-4 h-20 overflow-hidden">{sermon.description}</p>
                   <Button variant="link" asChild className="p-0 text-accent hover:text-accent/80">
                       <Link href="#">Watch Now &rarr;</Link>
                   </Button>
