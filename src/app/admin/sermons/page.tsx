@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -8,9 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog";
-import { createClient } from "@/utils/supabase/client";
+import { createClient } from "@/utils/supabase/server";
 import { format } from "date-fns";
-import { useEffect, useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 type Sermon = {
@@ -22,30 +19,21 @@ type Sermon = {
   published: boolean;
 };
 
-export default function SermonsAdminPage() {
-  const [sermons, setSermons] = useState<Sermon[]>([]);
+export default async function SermonsAdminPage() {
+  const supabase = createClient();
+  const { data: sermons, error } = await supabase
+    .from('sermons')
+    .select('*')
+    .order('date', { ascending: false });
 
-  useEffect(() => {
-    const supabase = createClient();
-    async function fetchSermons() {
-      const { data, error } = await supabase
-        .from('sermons')
-        .select('*')
-        .order('date', { ascending: false });
-
-      if (error) {
-        console.error("Error fetching sermons:", error);
-      } else {
-        setSermons(data as Sermon[]);
-      }
-    }
-    fetchSermons();
-  }, []);
-
+  if (error) {
+    console.error("Error fetching sermons:", error);
+    // Handle error state appropriately, maybe show a message
+  }
 
   return (
     <TooltipProvider>
-    <div>
+    <div className="light">
       <div className="flex items-center justify-between mb-8">
         <div>
             <h1 className="text-3xl font-bold text-foreground">Sermons</h1>
@@ -93,7 +81,7 @@ export default function SermonsAdminPage() {
                   <TableCell>{sermon.preacher}</TableCell>
                   <TableCell>{format(new Date(sermon.date), "PPP")}</TableCell>
                   <TableCell>
-                    <Badge variant={sermon.type === 'Video' ? 'default' : 'secondary'}>{sermon.type}</Badge>
+                    <Badge variant={sermon.type === 'Video' ? 'default' : 'secondary'}>{sermon.type || 'Text'}</Badge>
                   </TableCell>
                   <TableCell>
                     <Badge variant={sermon.published ? 'default' : 'outline'}>{sermon.published ? 'Published' : 'Draft'}</Badge>
@@ -115,6 +103,13 @@ export default function SermonsAdminPage() {
                   </TableCell>
                 </TableRow>
               ))}
+               {(!sermons || sermons.length === 0) && (
+                <TableRow>
+                  <TableCell colSpan={6} className="h-24 text-center">
+                    No sermons found.
+                  </TableCell>
+                </TableRow>
+              )}
             </TableBody>
           </Table>
         </CardContent>
