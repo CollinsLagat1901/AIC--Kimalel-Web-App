@@ -8,7 +8,7 @@ import { revalidatePath } from 'next/cache';
 const sermonSchema = z.object({
   title: z.string().min(1, 'Title is required.'),
   preacher: z.string().min(1, 'Preacher is required.'),
-  date: z.date(),
+  date: z.coerce.date(),
   description: z.string().optional(),
 });
 
@@ -18,7 +18,7 @@ export async function addSermon(prevState: any, formData: FormData) {
   const validatedFields = sermonSchema.safeParse({
     title: formData.get('title'),
     preacher: formData.get('preacher'),
-    date: new Date(formData.get('date') as string),
+    date: formData.get('date'),
     description: formData.get('description'),
   });
 
