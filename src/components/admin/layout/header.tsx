@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Search, Bell, User, LogOut } from 'lucide-react';
@@ -9,7 +8,7 @@ import { logout } from '@/app/login/actions';
 
 export default function AdminHeader() {
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-md h-16 flex items-center justify-between px-6 flex-shrink-0">
+    <header className="bg-background shadow-md h-16 flex items-center justify-between px-6 flex-shrink-0 border-b border-border">
       <div className="flex items-center">
         {/* Mobile Sidebar Toggle would go here */}
       </div>
@@ -17,7 +16,7 @@ export default function AdminHeader() {
       <div className="flex-1 flex justify-center px-4">
         <div className="relative w-full max-w-md">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-          <Input placeholder="Search sermons, events, members..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+          <Input placeholder="Search sermons, events, members..." className="pl-10 bg-card border-border" />
         </div>
       </div>
 

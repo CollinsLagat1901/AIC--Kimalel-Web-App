@@ -1,5 +1,3 @@
-
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin, Youtube } from 'lucide-react';
@@ -41,16 +39,16 @@ const infoItems = [
 
 export default function QuickInfo() {
   return (
-    <section id="services" className="py-16 md:py-24 bg-background dark:bg-background">
+    <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {infoItems.map((item) => (
-            <Card key={item.title} className="group text-center bg-card dark:bg-card border-2 border-transparent hover:border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <Card key={item.title} className="group text-center bg-card border-2 border-transparent hover:border-accent/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <CardHeader className="items-center">
-                <div className="p-4 bg-secondary text-primary rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
+                <div className="p-4 bg-background text-accent rounded-full group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
                   <item.icon className="h-8 w-8" />
                 </div>
-                <CardTitle className="font-headline text-2xl pt-4 text-primary">{item.title}</CardTitle>
+                <CardTitle className="font-headline text-2xl pt-4 text-foreground">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-muted-foreground mb-6 min-h-[6rem]">
@@ -60,7 +58,7 @@ export default function QuickInfo() {
                         </p>
                     ))}
                 </div>
-                <Button asChild className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300">
+                <Button asChild className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300">
                     <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : '_self'}>{item.buttonText}</Link>
                 </Button>
               </CardContent>

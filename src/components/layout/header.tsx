@@ -43,14 +43,12 @@ export default function Header() {
     'sticky top-0 z-50 w-full transition-all duration-300',
     isHomePage && !isScrolled
       ? 'bg-transparent'
-      : 'bg-background/80 backdrop-blur-sm shadow-md'
+      : 'bg-background/80 backdrop-blur-sm shadow-md border-b border-white/10'
   );
 
-  const defaultLinkColor =
-    isHomePage && !isScrolled ? 'text-white' : 'text-foreground';
-  const logoColor =
-    isHomePage && !isScrolled ? 'text-white' : 'text-primary';
-  const mobileMenuButtonColor = isHomePage && !isScrolled ? 'text-white' : 'text-primary';
+  const linkColor = 'text-foreground';
+  const logoColor = 'text-foreground';
+  const mobileMenuButtonColor = 'text-foreground';
 
   return (
     <header className={headerClasses} id="home">
@@ -66,7 +64,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  pathname === link.href ? 'text-accent font-bold' : defaultLinkColor
+                  pathname === link.href ? 'text-accent font-bold' : linkColor
                 )}
               >
                 {link.name}
@@ -87,7 +85,7 @@ export default function Header() {
           <div className="md:hidden flex items-center gap-2">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-black/10")}>
+                <Button variant="ghost" size="icon" className={cn(mobileMenuButtonColor, "hover:bg-white/10")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
@@ -95,7 +93,7 @@ export default function Header() {
               <SheetContent side="left" className="bg-background text-foreground p-0 w-3/4">
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between p-4 border-b border-border">
-                        <Logo className="text-primary" />
+                        <Logo className="text-foreground" />
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
                                 <X className="h-6 w-6" />

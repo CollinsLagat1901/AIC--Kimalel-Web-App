@@ -24,8 +24,8 @@ export default function LoginPage() {
   const [state, formAction] = useActionState(login, undefined)
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-secondary px-4">
-      <Card className="w-full max-w-sm">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+      <Card className="w-full max-w-sm bg-card text-foreground border-border">
         <CardHeader className="text-center">
           <div className="mb-4 flex justify-center">
             <Logo />
@@ -43,11 +43,12 @@ export default function LoginPage() {
                 type="email"
                 placeholder="m@example.com"
                 required
+                className="bg-background"
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" required />
+              <Input id="password" name="password" type="password" required className="bg-background" />
             </div>
             {state?.message && (
               <Alert variant="destructive">

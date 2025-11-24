@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -22,9 +21,9 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-foreground text-primary-foreground">
-      <div className="h-16 flex items-center justify-center border-b border-white/20">
-        <Logo className="text-primary-foreground" />
+    <aside className="hidden md:flex flex-col w-64 bg-background text-foreground border-r border-border">
+      <div className="h-16 flex items-center justify-center border-b border-border">
+        <Logo className="text-foreground" />
       </div>
       <nav className="flex-1 px-4 py-6 space-y-2">
         {navItems.map((item) => (
@@ -35,7 +34,7 @@ export default function AdminSidebar() {
               "flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-colors",
               pathname === item.href
                 ? 'bg-accent text-accent-foreground'
-                : 'hover:bg-white/10'
+                : 'hover:bg-accent/10'
             )}
           >
             <item.icon className="h-5 w-5" />
@@ -43,14 +42,14 @@ export default function AdminSidebar() {
           </Link>
         ))}
       </nav>
-      <div className="px-4 py-6 border-t border-white/20">
+      <div className="px-4 py-6 border-t border-border">
         <Link
             href="/admin/settings"
             className={cn(
               "flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-colors",
               pathname === "/admin/settings"
                 ? 'bg-accent text-accent-foreground'
-                : 'hover:bg-white/10'
+                : 'hover:bg-accent/10'
             )}
           >
             <Settings className="h-5 w-5" />

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold transition-colors", className)}>
-      <div className="p-1.5 bg-white rounded-full">
+      <div className="p-1.5 bg-background rounded-full">
         <AicLogoIcon className="w-6 h-6" />
       </div>
       <span className="font-headline">AIC Kimalel</span>
