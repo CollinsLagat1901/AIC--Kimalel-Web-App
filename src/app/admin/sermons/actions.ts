@@ -10,6 +10,7 @@ const sermonSchema = z.object({
   preacher: z.string().min(1, 'Preacher is required.'),
   date: z.coerce.date(),
   description: z.string().optional(),
+  published: z.boolean(),
 });
 
 export async function addSermon(prevState: any, formData: FormData) {
@@ -20,6 +21,7 @@ export async function addSermon(prevState: any, formData: FormData) {
     preacher: formData.get('preacher'),
     date: formData.get('date'),
     description: formData.get('description'),
+    published: formData.get('published') === 'on',
   });
 
   if (!validatedFields.success) {
@@ -30,14 +32,14 @@ export async function addSermon(prevState: any, formData: FormData) {
     };
   }
   
-  const { title, preacher, date, description } = validatedFields.data;
+  const { title, preacher, date, description, published } = validatedFields.data;
 
   const { error } = await supabase.from('sermons').insert({
     title,
     preacher,
     date: date.toISOString(),
     description,
-    published: true, // Automatically publish new sermons
+    published,
   });
 
   if (error) {

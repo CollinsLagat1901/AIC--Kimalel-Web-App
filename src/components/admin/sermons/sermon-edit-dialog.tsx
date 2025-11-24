@@ -24,6 +24,7 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { addSermon } from "@/app/admin/sermons/actions";
 import { useToast } from "@/hooks/use-toast";
+import { Switch } from "@/components/ui/switch";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -113,6 +114,15 @@ export function SermonEditDialog({ children }: { children: React.ReactNode }) {
                 Description
               </Label>
               <Textarea id="description" name="description" placeholder="Sermon summary or key scripture..." className="col-span-3" rows={4} />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label className="text-right">
+                Status
+              </Label>
+              <div className="flex items-center space-x-2 col-span-3">
+                  <Switch name="published" id="status-switch" />
+                  <Label htmlFor="status-switch">Published</Label>
+              </div>
             </div>
           </div>
           <DialogFooter>
