@@ -7,7 +7,7 @@ import { revalidatePath } from 'next/cache';
 
 const eventSchema = z.object({
   title: z.string().min(1, 'Title is required.'),
-  date: z.date(),
+  date: z.coerce.date(),
   location: z.string().optional(),
   ministry: z.string().optional(),
   description: z.string().optional(),
@@ -19,7 +19,7 @@ export async function addEvent(prevState: any, formData: FormData) {
   
   const validatedFields = eventSchema.safeParse({
     title: formData.get('title'),
-    date: new Date(formData.get('date') as string),
+    date: formData.get('date'),
     location: formData.get('location'),
     ministry: formData.get('ministry'),
     description: formData.get('description'),
@@ -29,7 +29,7 @@ export async function addEvent(prevState: any, formData: FormData) {
   if (!validatedFields.success) {
     console.log(validatedFields.error.flatten().fieldErrors);
     return {
-      message: 'Invalid event data.',
+      message: 'Invalid event data. Please check all fields.',
       success: false,
     };
   }
@@ -43,8 +43,6 @@ export async function addEvent(prevState: any, formData: FormData) {
     ministry,
     description,
     published,
-    // The image_id is now optional or handled differently, so we remove the direct mapping
-    // image_id: ministryDetails?.imageId || 'event-1', 
   });
 
   if (error) {
