@@ -47,8 +47,8 @@ export default function EventsAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-            <h1 className="text-3xl font-bold text-foreground">Events</h1>
-            <p className="text-muted-foreground">Manage all church events here.</p>
+            <h1 className="text-3xl font-bold text-gray-800">Events</h1>
+            <p className="text-gray-600">Manage all church events here.</p>
         </div>
         <EventEditDialog>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">

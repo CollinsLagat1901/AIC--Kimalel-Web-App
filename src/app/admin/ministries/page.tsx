@@ -23,8 +23,8 @@ export default function MinistriesAdminPage() {
       <div>
         <div className="flex items-center justify-between mb-8">
           <div>
-              <h1 className="text-3xl font-bold text-foreground">Ministries</h1>
-              <p className="text-muted-foreground">Manage all church ministries here.</p>
+              <h1 className="text-3xl font-bold text-gray-800">Ministries</h1>
+              <p className="text-gray-600">Manage all church ministries here.</p>
           </div>
           <Tooltip>
             <TooltipTrigger asChild>

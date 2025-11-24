@@ -44,8 +44,8 @@ export default function PrayerRequestsAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-            <h1 className="text-3xl font-bold text-foreground">Prayer Requests</h1>
-            <p className="text-muted-foreground">Manage all prayer and contact requests.</p>
+            <h1 className="text-3xl font-bold text-gray-800">Prayer Requests</h1>
+            <p className="text-gray-600">Manage all prayer and contact requests.</p>
         </div>
       </div>
 
