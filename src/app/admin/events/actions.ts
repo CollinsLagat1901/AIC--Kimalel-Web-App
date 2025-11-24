@@ -4,7 +4,6 @@
 import { z } from 'zod';
 import { createClient } from '@/utils/supabase/server';
 import { revalidatePath } from 'next/cache';
-import { ministries } from '@/lib/constants';
 
 const eventSchema = z.object({
   title: z.string().min(1, 'Title is required.'),
@@ -37,9 +36,6 @@ export async function addEvent(prevState: any, formData: FormData) {
   
   const { title, date, location, ministry, description, published } = validatedFields.data;
 
-  // Find the corresponding ministry to get the imageId
-  const ministryDetails = ministries.find(m => m.name === ministry);
-
   const { error } = await supabase.from('events').insert({
     title,
     date: date.toISOString(),
@@ -47,7 +43,8 @@ export async function addEvent(prevState: any, formData: FormData) {
     ministry,
     description,
     published,
-    image_id: ministryDetails?.imageId || 'event-1', // Default or derived image
+    // The image_id is now optional or handled differently, so we remove the direct mapping
+    // image_id: ministryDetails?.imageId || 'event-1', 
   });
 
   if (error) {
