@@ -66,7 +66,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-accent',
-                  pathname === link.href ? 'text-accent' : defaultLinkColor
+                  pathname === link.href ? 'text-accent font-bold' : defaultLinkColor
                 )}
               >
                 {link.name}
@@ -77,7 +77,7 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <Button
               variant="outline"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-gold"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 border-accent hover:border-accent/90 rounded-full transition-shadow hover:shadow-lg hover:glow-blue"
               asChild
             >
               <Link href="/contact">Plan Your Visit</Link>
@@ -111,7 +111,7 @@ export default function Header() {
                         href={link.href}
                         className={cn(
                           'text-lg font-medium transition-colors hover:text-accent',
-                          pathname === link.href ? 'text-accent' : 'text-primary-foreground'
+                          pathname === link.href ? 'text-accent font-bold' : 'text-primary-foreground'
                         )}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
