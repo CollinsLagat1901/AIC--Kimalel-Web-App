@@ -9,7 +9,6 @@ import { DotButton, PrevButton, NextButton } from '@/components/ui/carousel-butt
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
-import { TheeEntityLogo } from '../thee-entity-logo';
 
 
 const heroSlides = [
@@ -21,7 +20,7 @@ const heroSlides = [
 
 export default function Hero() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 50 }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false }),
+    Autoplay({ delay: 7000, stopOnInteraction: false }),
   ]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -47,7 +46,7 @@ export default function Hero() {
         <div className="flex h-full">
           {heroSlides.map((slide, index) => (
             <div
-              className="relative flex-[0_0_100%] h-full transition-opacity duration-1000"
+              className="relative flex-[0_0_100%] h-full overflow-hidden"
               key={slide.id}
             >
               <Image
@@ -56,7 +55,8 @@ export default function Hero() {
                 fill
                 className={cn(
                     "object-cover transition-opacity duration-1000",
-                    selectedIndex === index ? "opacity-100" : "opacity-0"
+                    "transform-gpu",
+                    selectedIndex === index ? "opacity-100 animate-ken-burns" : "opacity-0"
                 )}
                 priority={index === 0}
                 data-ai-hint={slide.imageHint}
@@ -100,6 +100,17 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
+        @keyframes ken-burns {
+          0% {
+            transform: scale(1) translate(0, 0);
+          }
+          100% {
+            transform: scale(1.1) translate(1%, -1%);
+          }
+        }
+        .animate-ken-burns {
+          animation: ken-burns 15s ease-in-out forwards;
+        }
         @keyframes fade-in-down {
           from { opacity: 0; transform: translateY(-20px); }
           to { opacity: 1; transform: translateY(0); }
