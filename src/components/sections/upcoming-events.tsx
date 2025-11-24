@@ -4,18 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Link from "next/link";
-import { upcomingEvents as events } from "@/lib/constants";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { createClient } from "@/utils/supabase/server";
 
 type Event = {
-  id: number;
+  id: string;
   title: string;
-  description: string;
-  date: string; 
-  image_url: string;
+  description: string | null;
+  date: string;
+  image_id: string | null;
 };
 
 export default async function UpcomingEvents() {
+  const supabase = createClient();
+  const { data: events, error } = await supabase
+    .from('events')
+    .select('id, title, description, date, image_id')
+    .eq('published', true)
+    .gt('date', new Date().toISOString())
+    .order('date', { ascending: true })
+    .limit(5);
+
+  if (error) {
+    console.error('Error fetching upcoming events:', error);
+  }
   
   if (!events || events.length === 0) {
       return (
@@ -47,7 +59,8 @@ export default async function UpcomingEvents() {
           <CarouselContent>
             {events.map((event, index) => {
               const eventDate = new Date(event.date);
-              const eventImage = PlaceHolderImages.find(p => p.id === event.imageId);
+              // Use event.image_id if available, otherwise default to a generic event image
+              const eventImage = PlaceHolderImages.find(p => p.id === (event.image_id || 'event-1'));
               if (!eventImage) return null;
 
               return (
