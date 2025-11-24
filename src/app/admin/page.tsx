@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Calendar, Users, HandHeart, Newspaper, Mail, ArrowUpRight } from "lucide-react";
@@ -33,18 +32,18 @@ export default async function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Admin Dashboard</h1>
-      <p className="text-gray-600 dark:text-gray-400">Welcome back, Admin. Here's your church's digital overview.</p>
+      <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>
+      <p className="text-muted-foreground">Welcome back, Admin. Here's your church's digital overview.</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mt-8">
         {overviewCards.map(card => (
-          <Card key={card.title} className="bg-white dark:bg-gray-800 border-l-4 border-primary dark:border-accent">
+          <Card key={card.title}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500 dark:text-gray-400">{card.title}</CardTitle>
-              <card.icon className="h-5 w-5 text-gray-400" />
+              <CardTitle className="text-sm font-medium text-muted-foreground">{card.title}</CardTitle>
+              <card.icon className="h-5 w-5 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">{card.value}</div>
+              <div className="text-2xl font-bold text-foreground">{card.value}</div>
               <Button variant="link" asChild className="p-0 h-auto text-xs text-accent mt-2">
                 <Link href={card.href}>
                   {card.buttonText}
@@ -57,12 +56,12 @@ export default async function AdminDashboard() {
       </div>
 
       <div className="mt-8">
-        <Card className="bg-white dark:bg-gray-800">
+        <Card>
             <CardHeader>
                 <CardTitle>Recent Activity</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-gray-600 dark:text-gray-400">Activity feed coming soon...</p>
+                <p className="text-muted-foreground">Activity feed coming soon...</p>
             </CardContent>
         </Card>
       </div>

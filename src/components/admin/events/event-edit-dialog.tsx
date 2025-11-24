@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect } from "react";
@@ -63,7 +62,7 @@ export function EventEditDialog({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[625px] bg-white dark:bg-gray-800">
+      <DialogContent className="sm:max-w-[625px]">
         <form action={formAction}>
           <DialogHeader>
             <DialogTitle>Add New Event</DialogTitle>

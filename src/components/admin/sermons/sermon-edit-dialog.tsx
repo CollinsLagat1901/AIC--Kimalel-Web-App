@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect } from "react";
@@ -61,7 +60,7 @@ export function SermonEditDialog({ children }: { children: React.ReactNode }) {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[625px] bg-white dark:bg-gray-800">
+      <DialogContent className="sm:max-w-[625px]">
         <form action={formAction}>
           <DialogHeader>
             <DialogTitle>Add New Sermon</DialogTitle>
@@ -120,12 +119,12 @@ export function SermonEditDialog({ children }: { children: React.ReactNode }) {
               <Label className="text-right pt-2">
                   Media
               </Label>
-              <div className="col-span-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                  <UploadCloud className="mx-auto h-12 w-12 text-gray-400" />
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                      <span className="font-semibold text-primary dark:text-accent">Click to upload</span> or drag and drop
+              <div className="col-span-3 border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:bg-muted/50">
+                  <UploadCloud className="mx-auto h-12 w-12 text-muted-foreground" />
+                  <p className="mt-2 text-sm text-muted-foreground">
+                      <span className="font-semibold text-primary">Click to upload</span> or drag and drop
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Video, Audio, or Text files</p>
+                  <p className="text-xs text-muted-foreground">Video, Audio, or Text files</p>
               </div>
             </div>
             <div className="grid grid-cols-4 items-center gap-4">

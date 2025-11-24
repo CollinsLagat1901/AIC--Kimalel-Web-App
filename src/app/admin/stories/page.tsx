@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -46,8 +45,8 @@ export default function StoriesAdminPage() {
       <div>
         <div className="flex items-center justify-between mb-8">
           <div>
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Stories</h1>
-              <p className="text-gray-600 dark:text-gray-400">Manage all testimonials and stories here.</p>
+              <h1 className="text-3xl font-bold text-foreground">Stories</h1>
+              <p className="text-muted-foreground">Manage all testimonials and stories here.</p>
           </div>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -62,7 +61,7 @@ export default function StoriesAdminPage() {
           </Tooltip>
         </div>
 
-        <Card className="bg-white dark:bg-gray-800">
+        <Card>
           <CardHeader>
               <div className="flex items-center justify-between">
                   <div>
@@ -71,7 +70,7 @@ export default function StoriesAdminPage() {
                   </div>
                   <div className="relative w-full max-w-sm">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                      <Input disabled placeholder="Search stories..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                      <Input disabled placeholder="Search stories..." className="pl-10" />
                   </div>
               </div>
           </CardHeader>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -45,12 +44,12 @@ export default function PrayerRequestsAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Prayer Requests</h1>
-            <p className="text-gray-600 dark:text-gray-400">Manage all prayer and contact requests.</p>
+            <h1 className="text-3xl font-bold text-foreground">Prayer Requests</h1>
+            <p className="text-muted-foreground">Manage all prayer and contact requests.</p>
         </div>
       </div>
 
-      <Card className="bg-white dark:bg-gray-800">
+      <Card>
         <CardHeader>
             <div className="flex items-center justify-between">
                 <div>
@@ -59,7 +58,7 @@ export default function PrayerRequestsAdminPage() {
                 </div>
                 <div className="relative w-full max-w-sm">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <Input disabled placeholder="Search by name or subject..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                    <Input disabled placeholder="Search by name or subject..." className="pl-10" />
                 </div>
             </div>
         </CardHeader>
@@ -84,7 +83,7 @@ export default function PrayerRequestsAdminPage() {
                   <TableCell>
                     <Badge variant="secondary">{request.subject}</Badge>
                   </TableCell>
-                  <TableCell className="text-gray-500 dark:text-gray-400 max-w-xs truncate">{request.message}</TableCell>
+                  <TableCell className="text-muted-foreground max-w-xs truncate">{request.message}</TableCell>
                   <TableCell>{format(new Date(request.created_at), "PPP")}</TableCell>
                   <TableCell>
                     <Badge 

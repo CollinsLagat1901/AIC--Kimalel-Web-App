@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ import { SermonEditDialog } from "@/components/admin/sermons/sermon-edit-dialog"
 import { createClient } from "@/utils/supabase/client";
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 type Sermon = {
   id: string;
@@ -49,8 +48,8 @@ export default function SermonsAdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-            <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Sermons</h1>
-            <p className="text-gray-600 dark:text-gray-400">Manage all church sermons here.</p>
+            <h1 className="text-3xl font-bold text-foreground">Sermons</h1>
+            <p className="text-muted-foreground">Manage all church sermons here.</p>
         </div>
         <SermonEditDialog>
           <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full shadow-lg hover:shadow-xl transition-shadow">
@@ -60,7 +59,7 @@ export default function SermonsAdminPage() {
         </SermonEditDialog>
       </div>
 
-      <Card className="bg-white dark:bg-gray-800">
+      <Card>
         <CardHeader>
             <div className="flex items-center justify-between">
                 <div>
@@ -69,7 +68,7 @@ export default function SermonsAdminPage() {
                 </div>
                 <div className="relative w-full max-w-sm">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                    <Input disabled placeholder="Search sermons..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                    <Input disabled placeholder="Search sermons..." className="pl-10" />
                 </div>
             </div>
         </CardHeader>

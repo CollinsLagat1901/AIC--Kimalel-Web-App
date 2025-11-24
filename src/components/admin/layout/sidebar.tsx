@@ -33,8 +33,8 @@ export default function AdminSidebar() {
             className={cn(
               "flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-colors",
               pathname === item.href
-                ? 'bg-accent text-accent-foreground'
-                : 'hover:bg-accent/10'
+                ? 'bg-primary text-primary-foreground'
+                : 'hover:bg-muted'
             )}
           >
             <item.icon className="h-5 w-5" />
@@ -48,8 +48,8 @@ export default function AdminSidebar() {
             className={cn(
               "flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-colors",
               pathname === "/admin/settings"
-                ? 'bg-accent text-accent-foreground'
-                : 'hover:bg-accent/10'
+                ? 'bg-primary text-primary-foreground'
+                : 'hover:bg-muted'
             )}
           >
             <Settings className="h-5 w-5" />

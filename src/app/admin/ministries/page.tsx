@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,6 @@ import { MoreHorizontal, PlusCircle, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -25,8 +23,8 @@ export default function MinistriesAdminPage() {
       <div>
         <div className="flex items-center justify-between mb-8">
           <div>
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Ministries</h1>
-              <p className="text-gray-600 dark:text-gray-400">Manage all church ministries here.</p>
+              <h1 className="text-3xl font-bold text-foreground">Ministries</h1>
+              <p className="text-muted-foreground">Manage all church ministries here.</p>
           </div>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -41,7 +39,7 @@ export default function MinistriesAdminPage() {
           </Tooltip>
         </div>
 
-        <Card className="bg-white dark:bg-gray-800">
+        <Card>
           <CardHeader>
               <div className="flex items-center justify-between">
                   <div>
@@ -50,7 +48,7 @@ export default function MinistriesAdminPage() {
                   </div>
                   <div className="relative w-full max-w-sm">
                       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                      <Input disabled placeholder="Search ministries..." className="pl-10 bg-gray-100 dark:bg-gray-700 border-none" />
+                      <Input disabled placeholder="Search ministries..." className="pl-10" />
                   </div>
               </div>
           </CardHeader>
@@ -59,7 +57,7 @@ export default function MinistriesAdminPage() {
               {ministryData.map((ministry) => {
                 const ministryImage = PlaceHolderImages.find(p => p.id === ministry.imageId);
                 return (
-                  <Card key={ministry.name} className="group overflow-hidden relative text-white text-center flex flex-col justify-between h-80 transition-all duration-300 ease-in-out hover:shadow-2xl dark:bg-gray-900">
+                  <Card key={ministry.name} className="group overflow-hidden relative text-white text-center flex flex-col justify-between h-80 transition-all duration-300 ease-in-out hover:shadow-2xl bg-card">
                     {ministryImage && (
                       <Image
                         src={ministryImage.imageUrl}

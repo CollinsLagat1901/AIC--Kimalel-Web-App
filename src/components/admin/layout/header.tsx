@@ -8,15 +8,15 @@ import { logout } from '@/app/login/actions';
 
 export default function AdminHeader() {
   return (
-    <header className="bg-background shadow-md h-16 flex items-center justify-between px-6 flex-shrink-0 border-b border-border">
+    <header className="bg-background shadow h-16 flex items-center justify-between px-6 flex-shrink-0 border-b border-border">
       <div className="flex items-center">
         {/* Mobile Sidebar Toggle would go here */}
       </div>
 
       <div className="flex-1 flex justify-center px-4">
         <div className="relative w-full max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-          <Input placeholder="Search sermons, events, members..." className="pl-10 bg-card border-border" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <Input placeholder="Search..." className="pl-10" />
         </div>
       </div>
 

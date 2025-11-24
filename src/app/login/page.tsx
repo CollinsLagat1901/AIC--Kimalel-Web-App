@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { AlertCircle } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -24,8 +25,8 @@ export default function LoginPage() {
   const [state, formAction] = useActionState(login, undefined)
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <Card className="w-full max-w-sm bg-card text-foreground border-border">
+    <div className={cn("flex min-h-screen items-center justify-center px-4", "light")}>
+      <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <div className="mb-4 flex justify-center">
             <Logo />
@@ -43,12 +44,11 @@ export default function LoginPage() {
                 type="email"
                 placeholder="m@example.com"
                 required
-                className="bg-background"
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" name="password" type="password" required className="bg-background" />
+              <Input id="password" name="password" type="password" required />
             </div>
             {state?.message && (
               <Alert variant="destructive">
