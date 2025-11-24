@@ -38,7 +38,6 @@ export async function addSermon(prevState: any, formData: FormData) {
     date: date.toISOString(),
     description,
     published: true, // Automatically publish new sermons
-    type: 'Text' // Default type
   });
 
   if (error) {
