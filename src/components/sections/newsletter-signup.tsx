@@ -36,11 +36,11 @@ export default function NewsletterSignup() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="bg-primary py-16 text-primary-foreground">
+    <section id="contact" className="bg-background py-16 text-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold font-headline mb-2">Stay Connected</h2>
-          <p className="text-gray-300 mb-6">
+          <h2 className="text-3xl font-bold font-headline mb-2 text-primary">Stay Connected</h2>
+          <p className="text-muted-foreground mb-6">
             Subscribe to our weekly devotionals & church news.
           </p>
           <form action={formAction} className="relative">
@@ -49,7 +49,7 @@ export default function NewsletterSignup() {
               name="email"
               placeholder="Enter your email address"
               required
-              className="w-full h-14 pl-6 pr-36 rounded-full text-base bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_hsl(var(--accent)/0.4)]"
+              className="w-full h-14 pl-6 pr-36 rounded-full text-base bg-card border-border text-foreground placeholder:text-muted-foreground focus-visible:ring-accent focus-visible:ring-offset-0 transition-shadow focus:shadow-[0_0_15px_2px_hsl(var(--accent)/0.4)]"
             />
             <SubmitButton />
           </form>
