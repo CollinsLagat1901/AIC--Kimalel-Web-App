@@ -21,7 +21,7 @@ export default function ChildrenHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-yellow-400/50 via-blue-400/50 to-pink-400/50 mix-blend-multiply"></div>
       <div className="relative z-10 px-4 flex flex-col items-center">
         <h1 className="text-4xl md:text-5xl font-bold font-headline mb-4 text-white text-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-            AIC Kimalel Kids
+            AIC Saramek Kimalel Kids
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
             A fun, safe, and exciting place to learn about Jesus!

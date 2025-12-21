@@ -69,7 +69,7 @@ export default function Hero() {
       
       <div className="relative z-10 px-4 flex flex-col items-center">
         <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 text-white animate-fade-in-down">
-          AIC Kimalel Saramek Church
+          AIC Saramek Kimalel Church
         </h1>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 animate-fade-in-up">
           A Place of Worship, Growth, and Community

@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
       <div className="p-1.5 bg-background rounded-full">
         <AicLogoIcon className="w-6 h-6" />
       </div>
-      <span className="font-headline">AIC Kimalel</span>
+      <span className="font-headline">AIC Saramek Kimalel</span>
     </Link>
   );
 }

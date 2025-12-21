@@ -33,7 +33,7 @@ export default async function UpcomingEvents() {
       return (
         <section id="events" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto px-4 text-center">
-                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
+                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Saramek Kimalel</h2>
                 <p className="text-muted-foreground">No upcoming events scheduled at the moment. Please check back soon!</p>
             </div>
         </section>
@@ -44,7 +44,7 @@ export default async function UpcomingEvents() {
     <section id="events" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Kimalel</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">What’s Happening at Saramek Kimalel</h2>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground">
             Join us for fellowship, growth, and community events.
           </p>

@@ -19,7 +19,7 @@ const infoItems = [
     icon: MapPin,
     title: "Our Location",
     lines: [
-      { label: "AIC Kimalel Saramek Church,", value: "" },
+      { label: "AIC Saramek Kimalel Church,", value: "" },
       { label: "Racecourse, Eldoret.", value: "" }
     ],
     buttonText: "Get Directions",

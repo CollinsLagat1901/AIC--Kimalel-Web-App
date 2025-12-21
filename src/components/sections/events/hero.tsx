@@ -22,7 +22,7 @@ export default function EventsHero() {
                     Our Events
                 </h1>
                 <p className="text-lg md:text-xl max-w-3xl mx-auto">
-                    Stay updated with what’s happening at AIC Kimalel Saramek Church.
+                    Stay updated with what’s happening at AIC Saramek Kimalel Church.
                 </p>
             </div>
         </section>

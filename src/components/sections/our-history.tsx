@@ -13,7 +13,7 @@ export default function OurHistory() {
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">Our History</h2>
                 <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
-                Founded as part of the Africa Inland Church (AIC) family, AIC Kimalel Saramek Church has been a center of worship and spiritual growth for the local community. Through the years, we’ve built a family of believers who are united in Christ, committed to service, and driven by love.
+                Founded as part of the Africa Inland Church (AIC) family, AIC Saramek Kimalel Church has been a center of worship and spiritual growth for the local community. Through the years, we’ve built a family of believers who are united in Christ, committed to service, and driven by love.
                 </p>
             </div>
             
